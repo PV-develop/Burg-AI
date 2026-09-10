@@ -141,7 +141,25 @@ var messageModal = (function () {
                 formData.append('url', window.location.href);
 
                 var response = await fetch('php/send.php', { method: 'POST', body: formData });
-                var responseJson = await response.json();
+                var raw = await response.text();
+
+                var responseJson = null;
+                try { responseJson = JSON.parse(raw); } catch (parseError) {}
+
+                if (!responseJson) {
+                    /* Ответ не JSON — значит PHP не выполнился. Так ведёт себя любая
+                       статическая витрина (GitHub Pages и подобные): send.php там либо
+                       отдаётся как текст, либо не находится вовсе. Это не поломка,
+                       поэтому вместо окна ошибки честно говорим, что форма ещё
+                       не подключена, и не делаем вид, что заявка ушла. */
+                    messageModal.show(
+                        'success',
+                        'Preview',
+                        'This is a preview of the page. The form is not connected to a mailbox yet, ' +
+                        'so your request has not been sent. Please write to hello@aidentiq.com instead.'
+                    );
+                    return;
+                }
 
                 if (responseJson.status !== 'success') {
                     throw new Error('Unsuccessful response status');
@@ -162,9 +180,13 @@ var messageModal = (function () {
                     'We could not send your request. Please try again or write to hello@aidentiq.com.'
                 );
 
-            }
+            } finally {
 
-            if (submitEl) submitEl.disabled = false;
+                /* именно finally: из try есть ранний выход по ветке предпросмотра,
+                   без него кнопка осталась бы заблокированной */
+                if (submitEl) submitEl.disabled = false;
+
+            }
         });
 
     });
