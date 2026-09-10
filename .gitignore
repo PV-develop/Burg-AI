@@ -1,0 +1,9 @@
+# лог заявок — данные клиентов, в репозиторий им нельзя
+php/send.log
+
+node_modules/
+.idea/
+.vscode/
+*.code-workspace
+.DS_Store
+Thumbs.db

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Search Optimization — AIDENTIQ</title>
+    <meta name="description" content="We turn AI search into a working channel for your business growth. AI optimization, GEO and SEO for businesses that want to be found and recommended by AI.">
+
+    <link rel="canonical" href="https://aidentiq.com/">
+    <!-- Языковые версии. Пока собрана только английская: как добавить FR и RU —
+         см. раздел «Языки» в README. Раскомментировать вместе с /fr/ и /ru/. -->
+    <link rel="alternate" hreflang="en" href="https://aidentiq.com/">
+    <!-- <link rel="alternate" hreflang="fr" href="https://aidentiq.com/fr/"> -->
+    <!-- <link rel="alternate" hreflang="ru" href="https://aidentiq.com/ru/"> -->
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="AI Search Optimization — AIDENTIQ">
+    <meta property="og:description" content="We turn AI search into a working channel for your business growth.">
+    <meta property="og:locale" content="en">
+
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<script>
+    /* Тему ставим до отрисовки, иначе на тёмной теме мигнёт светлый фон. */
+    (function () {
+        var saved = null;
+        try { saved = localStorage.getItem('aidentiq_theme'); } catch (e) {}
+        document.documentElement.setAttribute('data-theme', saved === 'light' ? 'light' : 'dark');
+    })();
+</script>
+
+<!-- ═════════ 1. Header ═════════ -->
+<header class="site-hd">
+    <div class="hd-wrap">
+        <a class="hd-logo" href="/">
+            <span class="hd-name">AIDENTIQ</span>
+            <span class="hd-tag">AI Search Optimization</span>
+        </a>
+        <div class="hd-right">
+            <nav class="hd-lang" aria-label="Language">
+                <span class="cur" aria-current="true">EN</span>
+                <!-- FR и RU станут ссылками, когда появятся /fr/ и /ru/ -->
+                <span class="soon" title="Coming soon">FR</span>
+                <span class="soon" title="Coming soon">RU</span>
+            </nav>
+            <button class="hd-theme" type="button" aria-label="Switch colour theme">
+                <svg class="ic-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="5" fill="currentColor"/><path d="M12 1v3M12 20v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1 12h3M20 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                <svg class="ic-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 13.2A9 9 0 1 1 10.8 3a7 7 0 0 0 10.2 10.2Z" fill="currentColor"/></svg>
+            </button>
+            <a class="btn btn-accent hd-cta" href="#audit">FREE AI AUDIT</a>
+        </div>
+    </div>
+</header>
+
+<div id="viewport">
+<div class="page">
+
+    <!-- ═════════ 2–4. Hero: заголовок, пояснение, форма AI-аудита ═════════ -->
+    <section class="hero sec" id="top">
+        <div class="gap stretch">
+            <div class="htext" style="flex:1">
+                <h1>AI Search Optimization</h1>
+                <div class="hero-intro">Make your business work with AI.</div>
+                <ul class="hvals">
+                    <div class="hlead">We turn AI search into a working channel for your business growth:</div>
+                    <li><span class="hicon"><svg viewBox="0 0 22 20" fill="none"><path d="M0 7.36758H12.5649L17.8478 7.96727V11.1656L12.5649 11.8224H0V7.36758ZM12.879 0L21.9885 9.59499L12.879 19.1614L10.109 16.5057L18.2762 8.16716V10.9943L10.109 2.65576L12.879 0Z" fill="currentColor"/></svg></span><span>we help <b>AI understand your business correctly</b>,</span></li>
+                    <li><span class="hicon"><svg viewBox="0 0 22 20" fill="none"><path d="M0 7.36758H12.5649L17.8478 7.96727V11.1656L12.5649 11.8224H0V7.36758ZM12.879 0L21.9885 9.59499L12.879 19.1614L10.109 16.5057L18.2762 8.16716V10.9943L10.109 2.65576L12.879 0Z" fill="currentColor"/></svg></span><span>we improve your <b>visibility in AI-generated answers</b>,</span></li>
+                    <li><span class="hicon"><svg viewBox="0 0 22 20" fill="none"><path d="M0 7.36758H12.5649L17.8478 7.96727V11.1656L12.5649 11.8224H0V7.36758ZM12.879 0L21.9885 9.59499L12.879 19.1614L10.109 16.5057L18.2762 8.16716V10.9943L10.109 2.65576L12.879 0Z" fill="currentColor"/></svg></span><span>we build a <b>clear digital identity</b> that AI can recognize and recommend.</span></li>
+                </ul>
+                <div class="gap" style="gap:12px;margin-top:4px">
+                    <a class="btn btn-lg btn-accent" href="#audit">GET MY FREE AI AUDIT</a>
+                    <a class="btn btn-lg btn-standard" href="#how">HOW IT WORKS</a>
+                </div>
+                <img class="hblobs hblobs-dark" src="images/hero-blobs.svg" alt="" aria-hidden="true" />
+                <img class="hblobs hblobs-light" src="images/hero-blobs-light.svg" alt="" aria-hidden="true" />
+            </div>
+            <div class="hside" style="width:440px">
+                <form class="contact-form" action="" method="post" novalidate>
+                <div class="heroform">
+                    <input type="hidden" name="source" value="hero-free-ai-audit" />
+                    <h3>Free AI audit</h3>
+                    <p class="hfnote">See how AI currently sees your business.</p>
+                    <label class="field"><input type="text" name="name" placeholder=" " autocomplete="name" required /><span class="flabel">Your name</span></label>
+                    <label class="field"><input type="tel" name="phone" placeholder=" " autocomplete="tel" required /><span class="flabel">Phone number</span></label>
+                    <label class="echeck" style="margin-top:8px">
+                        <input type="checkbox" name="consent" value="1" required />
+                        <span class="echecktext">I agree to the processing of my personal data as described in the <a href="privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a>.</span>
+                    </label>
+                    <button class="btn btn-lg btn-accent btn-block" type="submit" style="margin-top:4px">GET MY FREE AI AUDIT</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═════════ 5. Why it matters ═════════ -->
+    <section class="sec">
+        <div class="chead-wrap"><h2 class="chead">Is AI recommending your business?</h2></div>
+        <div class="stack" style="margin-top:20px">
+            <p class="ptext">Your customers are already asking AI who to choose. The question is whether your business appears in the answer — and how it is described.</p>
+        </div>
+        <div class="why" style="margin-top:28px">
+            <div class="wleft">
+                <div class="wcard">
+                    <div class="wbig">Visible</div>
+                    <p>Does your business appear at all when AI answers a question in your category?</p>
+                </div>
+                <div class="wcard">
+                    <div class="wbig">Accurate</div>
+                    <p>Is the description AI gives about your company correct, current and consistent?</p>
+                </div>
+            </div>
+            <div class="wmid">
+                <div class="wbig">9+</div>
+                <p>AI systems your customers already ask before they choose</p>
+                <div class="nnet">
+                    <span>ChatGPT</span><span>Perplexity</span><span>Gemini</span>
+                    <span>Google AI Overviews</span><span>Claude</span><span>Copilot</span>
+                    <span>Grok</span><span>DeepSeek</span><span>Mistral</span>
+                </div>
+            </div>
+            <a class="wcta" href="#audit">
+                <div class="wctatxt">See how AI describes your business today</div>
+                <div class="wctaicon"><svg viewBox="0 0 22 20" fill="none"><path d="M0 7.36758H12.5649L17.8478 7.96727V11.1656L12.5649 11.8224H0V7.36758ZM12.879 0L21.9885 9.59499L12.879 19.1614L10.109 16.5057L18.2762 8.16716V10.9943L10.109 2.65576L12.879 0Z" fill="currentColor"/></svg></div>
+            </a>
+        </div>
+    </section>
+
+    <!-- ═════════ 6. From search to recommendation ═════════ -->
+    <section class="sec">
+        <div class="chead-wrap"><h2 class="chead">From search to recommendation</h2></div>
+        <div class="flows">
+            <div class="flow old">
+                <div class="flowlbl">Traditional</div>
+                <ol class="flowsteps">
+                    <li>Google</li>
+                    <li>Search results</li>
+                    <li>Website</li>
+                    <li>Contact</li>
+                </ol>
+            </div>
+            <div class="flow new">
+                <div class="flowlbl">New model</div>
+                <ol class="flowsteps">
+                    <li>Question</li>
+                    <li>AI</li>
+                    <li>Recommendation</li>
+                    <li>Business</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═════════ 7–9. AI Optimization: внешний и внутренний слои ═════════ -->
+    <section class="sec">
+        <div class="chead-wrap"><h2 class="chead">AI optimization</h2></div>
+        <div class="stack" style="margin-top:20px;margin-bottom:32px">
+            <p class="ptext">A complete strategy for making your business easier for AI to understand, retrieve and recommend.</p>
+            <p class="ptext">We work across the external and internal layers of your digital presence.</p>
+        </div>
+        <div class="approach">
+            <div class="acard ext">
+                <div class="ahead">
+                    <div class="aicon"><svg viewBox="0 0 22 20" fill="none" style="transform:rotate(-45deg)"><path d="M0 7.36758H12.5649L17.8478 7.96727V11.1656L12.5649 11.8224H0V7.36758ZM12.879 0L21.9885 9.59499L12.879 19.1614L10.109 16.5057L18.2762 8.16716V10.9943L10.109 2.65576L12.879 0Z" fill="currentColor"/></svg></div>
+                    <div><div class="atitle">External layer</div><div class="acap">Outside your website</div></div>
+                </div>
+                <p class="atext">We manage the facts about your business that exist across the digital environment and the signals AI can use to understand your company.</p>
+                <div class="adiv"></div>
+                <div class="alead">Includes:</div>
+                <ol class="alist">
+                    <li>business directories,</li>
+                    <li>industry and third-party websites,</li>
+                    <li>reviews,</li>
+                    <li>brand mentions,</li>
+                    <li>company and location information.</li>
+                </ol>
+                <p class="agoal">Goal: create a clear, consistent and trustworthy digital identity.</p>
+            </div>
+            <div class="acard int">
+                <div class="ahead">
+                    <div class="aicon"><svg viewBox="0 0 22 20" fill="none" style="transform:rotate(135deg)"><path d="M0 7.36758H12.5649L17.8478 7.96727V11.1656L12.5649 11.8224H0V7.36758ZM12.879 0L21.9885 9.59499L12.879 19.1614L10.109 16.5057L18.2762 8.16716V10.9943L10.109 2.65576L12.879 0Z" fill="currentColor"/></svg></div>
+                    <div><div class="atitle">Internal layer</div><div class="acap">On your website</div></div>
+                </div>
+                <p class="atext">We build a clear and official source of information about your business for search engines and AI crawlers.</p>
+                <div class="adiv"></div>
+                <div class="alead">Includes:</div>
+                <ol class="alist">
+                    <li>technical AIO setup,</li>
+                    <li>company information pages,</li>
+                    <li>service structure,</li>
+                    <li>content for relevant prompts,</li>
+                    <li>FAQ and answer-oriented content,</li>
+                    <li>GEO/AIO formatting.</li>
+                </ol>
+            </div>
+            <a class="acta" href="#audit">
+                <div class="actatxt">Get a consultation</div>
+                <div class="actaicon"><svg viewBox="0 0 22 20" fill="none"><path d="M0 7.36758H12.5649L17.8478 7.96727V11.1656L12.5649 11.8224H0V7.36758ZM12.879 0L21.9885 9.59499L12.879 19.1614L10.109 16.5057L18.2762 8.16716V10.9943L10.109 2.65576L12.879 0Z" fill="currentColor"/></svg></div>
+            </a>
+        </div>
+    </section>
+
+    <!-- ═════════ 10–11. GEO и SEO оптимизация ═════════ -->
+    <section class="sec">
+        <div class="layers">
+            <div class="layer" style="justify-content:flex-start;gap:16px;min-height:340px">
+                <div class="stack" style="gap:8px">
+                    <h3 style="color:var(--head)">GEO optimization</h3>
+                    <div class="lsub">Generative Engine Optimization</div>
+                </div>
+                <p>Make your content easier for generative AI systems to understand and use in their answers.</p>
+                <p>We optimize content around the questions your potential customers actually ask.</p>
+            </div>
+            <div class="layer" style="justify-content:flex-start;gap:16px;min-height:340px">
+                <div class="stack" style="gap:8px">
+                    <h3 style="color:var(--head)">SEO optimization</h3>
+                    <div class="lsub">Traditional search still matters</div>
+                </div>
+                <p>Traditional SEO remains important.</p>
+                <p>We connect SEO foundations with AI Search Optimization so your website can be understood by both traditional search engines and modern AI systems.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═════════ 12. AI Audit ═════════ -->
+    <section class="sec">
+        <div class="chead-wrap"><h2 class="chead">AI audit</h2></div>
+        <div class="stack" style="margin-top:20px;margin-bottom:32px">
+            <p class="ptext">How does AI see your business today?</p>
+        </div>
+        <div class="audit-grid">
+            <div class="audit-item"><span class="anum">01</span><p>Your AI visibility</p></div>
+            <div class="audit-item"><span class="anum">02</span><p>How your brand is described</p></div>
+            <div class="audit-item"><span class="anum">03</span><p>Which competitors appear</p></div>
+            <div class="audit-item"><span class="anum">04</span><p>Your digital footprint</p></div>
+            <div class="audit-item"><span class="anum">05</span><p>Website readiness</p></div>
+            <div class="audit-item"><span class="anum">06</span><p>Missing or inconsistent information</p></div>
+        </div>
+        <p class="ptext" style="margin-top:28px">You receive a clear picture of where you are and what should be improved.</p>
+    </section>
+
+    <!-- ═════════ 13. Expert ═════════ -->
+    <section class="sec">
+        <div class="expert">
+            <!-- TODO: заменить на фото Сергия Мысина — images/expert.webp, 340×440 -->
+            <div class="ephoto ph">
+                <b>Sergiy Mysin</b>
+                <s>Founder · AI Search Optimization Consultant</s>
+            </div>
+            <div class="ebody">
+                <h2 class="etitle">Connect with our expert</h2>
+                <p class="equote">I work at the intersection of SEO, digital marketing and artificial intelligence. My focus is helping businesses adapt to the new way people discover and choose companies.</p>
+                <div class="econtacts">
+                    <!-- TODO: подставить реальные email и профиль LinkedIn -->
+                    <a href="mailto:hello@aidentiq.com">hello@aidentiq.com</a>
+                </div>
+                <div class="esocials">
+                    <a class="esoc li" href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none"><path d="M6.94 5.5a1.94 1.94 0 1 1-3.88 0 1.94 1.94 0 0 1 3.88 0ZM3.4 8.9h3.1V21H3.4V8.9Zm5.06 0h2.97v1.65h.04c.41-.78 1.42-1.6 2.93-1.6 3.13 0 3.71 2.06 3.71 4.74V21h-3.1v-5.63c0-1.34-.02-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97V21h-3.1V8.9Z" fill="currentColor"/></svg></a>
+                    <a class="esoc mail" href="mailto:hello@aidentiq.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none"><path d="M3 6h18v12H3V6Zm1.6 1.4 7.4 5.1 7.4-5.1H4.6Z" fill="currentColor"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═════════ 14. Consultation CTA ═════════ -->
+    <section class="sec">
+        <div class="expert has-form consult">
+            <div class="ebody">
+                <h2 class="etitle">Get a consultation</h2>
+                <p class="equote">Let’s analyse how AI sees your business and identify the most important opportunities.</p>
+            </div>
+            <form class="contact-form eform" action="" method="post" novalidate>
+                <input type="hidden" name="source" value="consultation-cta" />
+                <label class="field"><input type="text" name="name" placeholder=" " autocomplete="name" required /><span class="flabel">Your name</span></label>
+                <label class="field"><input type="tel" name="phone" placeholder=" " autocomplete="tel" required /><span class="flabel">Phone number</span></label>
+                <label class="field"><input type="email" name="email" placeholder=" " autocomplete="email" /><span class="flabel">E-mail</span></label>
+                <label class="echeck">
+                    <input type="checkbox" name="consent" value="1" required />
+                    <span class="echecktext">I agree to the processing of my personal data as described in the <a href="privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a>.</span>
+                </label>
+                <button class="btn btn-lg btn-accent btn-block" type="submit">GET A FREE AI AUDIT</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ═════════ 15. How it works ═════════ -->
+    <section class="sec" id="how">
+        <div class="chead-wrap"><h2 class="chead">How it works</h2></div>
+        <div class="steps">
+            <div class="step"><span class="snum">01</span><div class="stitle">Discover</div><p>Website, brand and competitors</p></div>
+            <div class="step"><span class="snum">02</span><div class="stitle">Audit</div><p>Current AI visibility</p></div>
+            <div class="step"><span class="snum">03</span><div class="stitle">Strategy</div><p>Priorities and opportunities</p></div>
+            <div class="step"><span class="snum">04</span><div class="stitle">Optimize</div><p>Website, content and digital identity</p></div>
+            <div class="step"><span class="snum">05</span><div class="stitle">Monitor</div><p>Relevant AI questions and changes</p></div>
+        </div>
+    </section>
+
+    <!-- ═════════ 16. AI Agents ═════════ -->
+    <section class="sec">
+        <div class="agents">
+            <div class="agtext">
+                <h2 class="sm">AI agents</h2>
+                <div class="agsub">Built with AI. Directed by humans.</div>
+                <p>AI agents automate parts of research, auditing and monitoring: competitors, AI answers, websites, brand mentions and content gaps.</p>
+            </div>
+            <div class="agflow">
+                <div class="agrow"><span class="agkey">AI</span><span class="agval">does the research</span></div>
+                <div class="agrow"><span class="agkey">Strategy</span><span class="agval">decides what matters</span></div>
+                <div class="agrow"><span class="agkey">Humans</span><span class="agval">make the final decisions</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═════════ 17. Final CTA ═════════ -->
+    <section class="sec" id="audit">
+        <div class="shead mid"><h2 class="sm">What does AI say about your business?</h2>
+            <div class="sub">Get your free AI audit.</div></div>
+        <form class="contact-form" action="" method="post" novalidate>
+            <input type="hidden" name="source" value="final-cta" />
+            <div class="gap stretch" style="gap:3px;margin:0 auto 20px;width:60%">
+                <div class="col" style="flex:0 0 calc(50% - 1.5px);gap:3px;min-width:0">
+                    <label class="field"><input type="text" name="name" placeholder=" " autocomplete="name" required /><span class="flabel">Your name</span></label>
+                    <label class="field"><input type="tel" name="phone" placeholder=" " autocomplete="tel" required /><span class="flabel">Phone number</span></label>
+                </div>
+                <button class="btn btn-lg btn-accent" style="flex:0 0 calc(50% - 1.5px);height:auto;min-width:0" type="submit">GET MY FREE AI AUDIT</button>
+            </div>
+            <label class="echeck echeck-mid">
+                <input type="checkbox" name="consent" value="1" required />
+                <span class="echecktext">I agree to the processing of my personal data as described in the <a href="privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a>.</span>
+            </label>
+        </form>
+    </section>
+
+    <!-- ═════════ 19. LinkedIn ↔ Website ═════════ -->
+    <section class="sec">
+        <div class="linkflow">
+            <div class="lfcol">
+                <div class="lflbl">LinkedIn → Website</div>
+                <ol class="lfsteps">
+                    <li>LinkedIn profile</li>
+                    <li>AIDENTIQ website</li>
+                    <li>Free AI audit</li>
+                    <li>Contact with Sergiy Mysin</li>
+                </ol>
+            </div>
+            <div class="lfcol">
+                <div class="lflbl">Website → LinkedIn</div>
+                <ol class="lfsteps">
+                    <li>AIDENTIQ website</li>
+                    <li>LinkedIn profile</li>
+                </ol>
+                <!-- TODO: подставить реальный адрес профиля -->
+                <a class="btn btn-standard lfbtn" href="#" target="_blank" rel="noopener">Open LinkedIn profile</a>
+            </div>
+        </div>
+    </section>
+
+</div>
+</div>
+
+<!-- ═════════ 18. Footer ═════════ -->
+<footer class="site-ft">
+    <div class="ft-wrap">
+        <div class="ft-brand">
+            <span class="ft-name">AIDENTIQ</span>
+            <span class="ft-tag">AI Search Optimization</span>
+            <span class="ft-geo">Brussels · Belgium</span>
+        </div>
+        <div class="ft-links">
+            <!-- TODO: подставить реальный адрес профиля LinkedIn -->
+            <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="mailto:hello@aidentiq.com">Email</a>
+        </div>
+        <div class="ft-lang">
+            <span class="cur">English</span>
+            <span class="soon">Français</span>
+            <span class="soon">Русский</span>
+        </div>
+        <div class="ft-legal">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="cookie-policy.html">Cookie Policy</a>
+            <a href="legal.html">Legal</a>
+        </div>
+    </div>
+</footer>
+
+<!-- Окно с результатом отправки формы -->
+<div class="dialog message-modal" id="messageModal">
+    <div class="modal">
+        <div class="close" aria-label="Close">
+            <svg viewBox="0 0 28 29" fill="none" width="28" height="29"><path fill-rule="evenodd" clip-rule="evenodd" d="M14 15.9142L23.1924 25.1066L24.6066 23.6924L15.4143 14.5L24.6066 5.30761L23.1924 3.8934L14 13.0858L4.80765 3.8934L3.39344 5.30761L12.5858 14.5L3.39344 23.6924L4.80765 25.1066L14 15.9142Z" fill="currentColor"/></svg>
+        </div>
+        <div class="mm-title"></div>
+        <div class="mm-text"></div>
+    </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Policy — AIDENTIQ</title>
+    <meta name="description" content="Which cookies the AIDENTIQ website uses and how to control them.">
+    <meta name="robots" content="noindex">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<script>
+    (function () {
+        var saved = null;
+        try { saved = localStorage.getItem('aidentiq_theme'); } catch (e) {}
+        document.documentElement.setAttribute('data-theme', saved === 'light' ? 'light' : 'dark');
+    })();
+</script>
+
+<header class="site-hd">
+    <div class="hd-wrap">
+        <a class="hd-logo" href="index.html">
+            <span class="hd-name">AIDENTIQ</span>
+            <span class="hd-tag">AI Search Optimization</span>
+        </a>
+        <div class="hd-right">
+            <button class="hd-theme" type="button" aria-label="Switch colour theme">
+                <svg class="ic-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="5" fill="currentColor"/><path d="M12 1v3M12 20v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1 12h3M20 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                <svg class="ic-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 13.2A9 9 0 1 1 10.8 3a7 7 0 0 0 10.2 10.2Z" fill="currentColor"/></svg>
+            </button>
+        </div>
+    </div>
+</header>
+
+<main class="legal-page">
+    <h1>Cookie Policy</h1>
+    <p class="updated">Last updated: [DATE]</p>
+
+    <p class="draft"><b>Draft template.</b> This text is a starting point based on common GDPR and ePrivacy practice.
+        It must be reviewed by a qualified lawyer, and the list of cookies must be checked against what the site
+        actually sets once analytics and other third-party tools are added.</p>
+
+    <h2>1. What cookies are</h2>
+    <p>Cookies are small text files that a website stores in your browser. Similar technologies, such as
+        <code>localStorage</code>, work in the same way and are covered by this policy.</p>
+
+    <h2>2. What this site currently uses</h2>
+    <p>At the moment this website stores only one item, and it is strictly necessary for the site to work as you asked
+        it to:</p>
+    <ul>
+        <li><b>aidentiq_theme</b> — remembers whether you chose the light or dark version of the page. Stored in your
+            browser via <code>localStorage</code>, never sent to us or to anyone else, kept until you clear your
+            browser data.</li>
+    </ul>
+    <p>No analytics, advertising or tracking cookies are set. Because the only stored item is strictly necessary, no
+        consent banner is required for it under the ePrivacy Directive.</p>
+
+    <h2>3. Third-party requests</h2>
+    <p>The page currently loads its typefaces from Google Fonts, which means your browser sends a request to Google
+        servers and your IP address becomes visible to Google. [To be confirmed by the lawyer: several EU decisions
+        treat this as a transfer requiring consent — self-hosting the fonts removes the issue entirely.]</p>
+
+    <h2>4. If analytics is added later</h2>
+    <p>Before any analytics or marketing tool is switched on, a consent banner must be added, the tool must stay
+        blocked until consent is given, and the table above must be extended with the name, purpose, provider and
+        lifetime of every cookie it sets.</p>
+
+    <h2>5. How to control cookies</h2>
+    <p>You can delete stored data and block cookies in your browser settings. Blocking the item listed above only means
+        the site will not remember your colour theme.</p>
+
+    <h2>6. Contact</h2>
+    <p>Questions about this policy: <a href="mailto:hello@aidentiq.com">hello@aidentiq.com</a>.</p>
+
+    <a class="back" href="index.html">← Back to the homepage</a>
+</main>
+
+<footer class="site-ft">
+    <div class="ft-wrap">
+        <div class="ft-brand">
+            <span class="ft-name">AIDENTIQ</span>
+            <span class="ft-tag">AI Search Optimization</span>
+            <span class="ft-geo">Brussels · Belgium</span>
+        </div>
+        <div class="ft-links">
+            <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="mailto:hello@aidentiq.com">Email</a>
+        </div>
+        <div class="ft-legal">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="cookie-policy.html">Cookie Policy</a>
+            <a href="legal.html">Legal</a>
+        </div>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
