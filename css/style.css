@@ -1265,7 +1265,7 @@ footer.ft a.fmuted:hover{opacity:.7;}
    ════════════════════════════════════════════════════════════════════ */
 
 /* ── Шапка ── */
-.site-hd{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--line);}
+.site-hd{position:sticky;top:0;z-index:50;background:var(--bg);}
 .hd-wrap{max-width:1755px;margin:0 auto;padding:16px 40px;display:flex;align-items:center;
   justify-content:space-between;gap:24px;box-sizing:border-box;}
 .hd-logo{display:flex;flex-direction:column;gap:2px;text-decoration:none;}
