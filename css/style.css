@@ -1266,6 +1266,10 @@ footer.ft a.fmuted:hover{opacity:.7;}
 
 /* ── Шапка ── */
 .site-hd{position:sticky;top:0;z-index:50;background:var(--bg);}
+/* На странице с видеосценой шапка fixed, а не sticky: сцена тогда начинается
+   от самого верха и заходит под шапку. Иначе над видео остаётся полоска
+   фона body — заметно в светлой теме. */
+.vhero-page .site-hd{position:fixed;left:0;right:0;}
 .hd-wrap{max-width:1755px;margin:0 auto;padding:16px 40px;display:flex;align-items:center;
   justify-content:space-between;gap:24px;box-sizing:border-box;}
 .hd-logo{display:flex;flex-direction:column;gap:2px;text-decoration:none;}
@@ -1443,4 +1447,84 @@ footer.ft a.fmuted:hover{opacity:.7;}
   .legal-page h1{font-size:30px;}
   .legal-page h2{font-size:21px;}
   .legal-page p,.legal-page li{font-size:16px;}
+}
+
+/* ── Hero вариант 2: видеосцена со скрабом (только index2.html) ──
+   Секция вне #viewport, поэтому на неё не действует transform-зум сцены.
+   Высота 320vh — это «пробег» скролла, за который проигрывается видео:
+   первые ~1.2 экрана человек стоит, дальше бежит и разбивает лёд. */
+.vhero{position:relative;height:420vh;margin-bottom:30px;background:#0b0b0d;}
+.vhero-stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+  /* фон повторяет студийную подсветку видео, чтобы поля letterbox не отличались от кадра */
+  background:radial-gradient(120% 90% at 50% 42%,#1a1b1e 0%,#101114 55%,#0b0b0d 100%);}
+.vhero-video{width:100%;height:100%;object-fit:contain;display:block;}
+/* Заголовок с подзаголовком из старого hero, поверх сцены слева.
+   Левый край — на уровне логотипа шапки: .hd-wrap центрируется с
+   max-width:1755px и padding 40px, отсюда формула. Скролл уводит его
+   «вглубь» кадра: perspective+translateZ отдаляют от камеры, прозрачность
+   гаснет — стилями ведёт js/hero-video.js */
+.vhero-copy{position:absolute;z-index:2;
+  left:max(40px, calc((100% - 1755px) / 2 + 40px));top:15%;max-width:620px;
+  pointer-events:none;will-change:transform,opacity;}
+.vhero-title{margin:0;font-family:var(--disp);font-weight:500;
+  font-size:clamp(34px,4.3vw,72px);line-height:1.08;letter-spacing:-0.01em;
+  color:#fff;text-transform:uppercase;}
+.vhero-sub{margin:14px 0 0;font-family:var(--disp);font-weight:400;
+  font-size:clamp(16px,1.55vw,26px);line-height:1.3;color:#F5F5F5;}
+/* Форма из старого hero: часть линейного сценария. Когда скролл вычерпывает
+   видеофазу, всплывает по центру прилипшей сцены и держится, пока секция
+   прилипла (один экран), затем уходит вместе с ней. Скрытая — без событий
+   и невидима, чтобы не ловила клики у скролла */
+.vhero-formwrap{position:absolute;inset:0;z-index:3;display:flex;align-items:center;justify-content:center;
+  padding:24px;opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity .45s ease, visibility 0s linear .45s;}
+.vhero.form-show .vhero-formwrap{opacity:1;visibility:visible;pointer-events:auto;
+  transition:opacity .45s ease;}
+/* Форма всегда в тёмном оформлении: сцена тёмная в обеих темах,
+   поэтому тёмные значения переменных темы заданы локально */
+.vhero-formwrap{--bg:#121212;--surface:#202020;--raise:#292929;--line:#414141;
+  --head:#F5F5F5;--body:#EEEEEE;--muted:#8A8A8A;--accent:#E01105;--accent-press:#820700;}
+.vhero-formwrap .contact-form{width:min(440px,100%);flex:none;
+  transform:translateY(26px) scale(.96);transition:transform .45s ease;}
+.vhero.form-show .vhero-formwrap .contact-form{transform:none;}
+.vhero-formwrap .heroform{height:auto;max-height:calc(100vh - 48px);overflow:auto;
+  background:rgba(18,19,22,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  box-shadow:inset 0 0 0 1px var(--line), 0 30px 80px rgba(0,0,0,.55);}
+.vhero-hint{position:absolute;left:50%;bottom:34px;transform:translateX(-50%);
+  display:flex;align-items:center;gap:10px;
+  font-family:var(--ui);font-size:13px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;
+  color:rgba(245,245,245,.5);pointer-events:none;transition:opacity .4s;}
+.vhero-hint svg{width:16px;height:16px;animation:vhero-bob 1.6s ease-in-out infinite;}
+.vhero.is-past .vhero-hint{opacity:0;}
+@keyframes vhero-bob{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(5px);}
+}
+/* Шапка над видео (класс вешает js/hero-video.js, пока под шапкой ещё кадр):
+   фон убираем, а текст делаем светлым — сцена тёмная в обеих темах.
+   Кнопка FREE AI AUDIT красная и так, её не трогаем. */
+.site-hd{transition:background .3s;}
+.site-hd.hd-clear{background:transparent;}
+.site-hd.hd-clear .hd-name{color:#F5F5F5;}
+.site-hd.hd-clear .hd-tag{color:rgba(245,245,245,.55);}
+.site-hd.hd-clear .hd-lang .cur{color:#F5F5F5;}
+.site-hd.hd-clear .hd-lang .soon,
+.site-hd.hd-clear .hd-lang a{color:rgba(245,245,245,.6);}
+.site-hd.hd-clear .hd-theme{background:rgba(245,245,245,.12);color:#F5F5F5;}
+.site-hd.hd-clear .hd-theme:hover{background:rgba(245,245,245,.22);}
+@media (max-width:780px){
+  /* на телефоне видео вертикально уже — укорачиваем пробег, чтобы не крутить впустую;
+     contain оставил бы фигуру крохотной в портретном экране, поэтому кадр вписываем
+     в ширину с обрезкой боковых полей — действие всегда по центру кадра */
+  .vhero{height:340vh;}
+  .vhero-video{object-fit:cover;}
+  .vhero-copy{left:20px;right:20px;top:104px;max-width:none;}
+  .vhero-formwrap{padding:16px;}
+  .vhero-hint{bottom:24px;}
+}
+@media (prefers-reduced-motion:reduce){
+  /* анимацию не ведём: секция схлопывается в один экран, человек стоит на первом кадре */
+  .vhero{height:100vh;}
+  .vhero-hint{display:none;}
 }
