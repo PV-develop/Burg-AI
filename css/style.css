@@ -1449,7 +1449,7 @@ footer.ft a.fmuted:hover{opacity:.7;}
   .legal-page p,.legal-page li{font-size:16px;}
 }
 
-/* ── Hero вариант 2: видеосцена со скрабом (только index2.html) ──
+/* ── Hero: видеосцена со скрабом (страница index.html) ──
    Секция вне #viewport, поэтому на неё не действует transform-зум сцены.
    Высота 320vh — это «пробег» скролла, за который проигрывается видео:
    первые ~1.2 экрана человек стоит, дальше бежит и разбивает лёд. */
@@ -1458,7 +1458,13 @@ footer.ft a.fmuted:hover{opacity:.7;}
   display:flex;align-items:center;justify-content:center;
   /* фон повторяет студийную подсветку видео, чтобы поля letterbox не отличались от кадра */
   background:radial-gradient(120% 90% at 50% 42%,#1a1b1e 0%,#101114 55%,#0b0b0d 100%);}
-.vhero-video{width:100%;height:100%;object-fit:contain;display:block;}
+/* Кадр всегда заполняет экран целиком (cover) — полос не остаётся ни сверху/
+   снизу, ни по бокам: действие всегда по центру кадра, обрезка боков безопасна.
+   На ультрамониторах (шире 19:9) cover отрезал бы голову и ноги — там contain */
+.vhero-video{width:100%;height:100%;object-fit:cover;display:block;}
+@media (min-aspect-ratio:19/9){
+  .vhero-video{object-fit:contain;}
+}
 /* Заголовок с подзаголовком из старого hero, поверх сцены слева.
    Левый край — на уровне логотипа шапки: .hd-wrap центрируется с
    max-width:1755px и padding 40px, отсюда формула. Скролл уводит его
@@ -1514,14 +1520,21 @@ footer.ft a.fmuted:hover{opacity:.7;}
 .site-hd.hd-clear .hd-theme{background:rgba(245,245,245,.12);color:#F5F5F5;}
 .site-hd.hd-clear .hd-theme:hover{background:rgba(245,245,245,.22);}
 @media (max-width:780px){
-  /* на телефоне видео вертикально уже — укорачиваем пробег, чтобы не крутить впустую;
-     contain оставил бы фигуру крохотной в портретном экране, поэтому кадр вписываем
-     в ширину с обрезкой боковых полей — действие всегда по центру кадра */
+  /* на телефоне кадр и так вертикально шире экрана — cover режет только бока,
+     общее правило .vhero-video выше его и покрывает; пробег короче, чтобы
+     не крутить впустую */
   .vhero{height:340vh;}
-  .vhero-video{object-fit:cover;}
   .vhero-copy{left:20px;right:20px;top:104px;max-width:none;}
   .vhero-formwrap{padding:16px;}
   .vhero-hint{bottom:24px;}
+}
+@media (max-width:600px){
+  /* на самых узких экранах заголовок уходит в нижний левый угол сцены;
+     подсказка Scroll остаётся по центру внизу. Перенос строк у заголовка
+     жёсткий (<br> в разметке) — всегда ровно две строки */
+  .vhero-copy{top:auto;bottom:84px;}
+  .vhero-title{font-size:clamp(24px,9vw,34px);}
+  .vhero-sub{margin-top:10px;font-size:15px;}
 }
 @media (prefers-reduced-motion:reduce){
   /* анимацию не ведём: секция схлопывается в один экран, человек стоит на первом кадре */
